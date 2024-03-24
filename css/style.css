@@ -103,42 +103,14 @@ nav ul li a:hover::after {
   font-weight: bold;
   padding: 10px 25px;
   border-radius: 30px;
-  transition: transform 0.4s;
+  transition: all 0.4s;
 }
 .btn:hover {
   transform: scale(1.2);
 }
-
-/* media query */
-@media screen and (max-width: 890px) {
-  nav .btn {
-    display: none;
-  }
-}
-@media screen and (max-width: 769px) {
-  nav ul {
-    display: none;
-  }
-  .nav-toggle {
-    display: grid;
-    background: transparent;
-    border: none;
-    font-size: 2rem;
-  }
-
-  .nav-toggle:hover {
-    border: none;
-    color: #f9004d;
-  }
-  .nav-header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .nav-center {
-    grid-template-columns: 1fr;
-  }
+/* aside */
+.aside {
+  display: none;
 }
 
 .content {
@@ -386,4 +358,95 @@ footer p:nth-child(2) {
   color: #f9004d;
   bottom: 35px;
   font-size: 14px;
+}
+
+/* media query */
+@media screen and (max-width: 890px) {
+  nav .btn {
+    display: none;
+  }
+  .nav-header {
+    padding-left: 1.5rem;
+  }
+}
+@media screen and (max-width: 769px) {
+  nav ul {
+    display: none;
+  }
+  .nav-toggle {
+    display: grid;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+  }
+
+  .nav-toggle:hover {
+    border: none;
+    color: #f9004d;
+  }
+  .nav-header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-center {
+    grid-template-columns: 1fr;
+  }
+
+  .aside {
+    display: grid;
+    background: #191919;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 60%;
+    z-index: 999;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.5);
+    transform: translateX(-100%);
+    transition: all 0.5s linear;
+  }
+  .show-sidebar {
+    transform: translateX(0);
+  }
+
+  .aside .aside-links li {
+    /* padding: 1rem; */
+    list-style-type: none;
+  }
+  .aside-links a {
+    display: block;
+    /* background: #f9004d; */
+    text-align: center;
+    padding-top: 3rem;
+    text-decoration: none;
+    letter-spacing: 3px;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.2s;
+  }
+  .aside-links a:hover {
+    color: #f9004d;
+    transform: scale(1.1);
+  }
+
+  .social-icons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    place-items: center;
+  }
+  .social-icon {
+    list-style-type: none;
+    font-size: 1.5rem;
+  }
+  .social-icon a {
+    color: #fff;
+    transition: all 0.2s;
+  }
+  .social-icon a:hover {
+    color: #f9004d;
+  }
 }
